@@ -30,7 +30,7 @@ test('handle FETCH_PIZZA_MENU_REQUEST', () => {
 test('handle FETCH_PIZZA_MENU_SUCCESS', () => {
 	menuState = menuReducer(menuState, fetchPizzaMenuSuccess(examplePizzaMenu.data))
 	expect(menuState.get('loading')).toBe(false)
-	expect(menuState.get('pizzas')).toEqual(examplePizzaMenuFormatted)
+	expect(menuState.get('pizzas')).toEqual(Immutable.fromJS(examplePizzaMenuFormatted))
 })
 
 test('handle FETCH_PIZZA_MENU_FAILURE', () => {

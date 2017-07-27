@@ -27,7 +27,7 @@ const normalizePizzaMenu = (rawPizzaData) => {
 		}
 		return formattedPizza
 	})
-	return formattedPizzaData
+	return Immutable.fromJS(formattedPizzaData)
 }
 
 const menuReducer = (state = initialState, action) => {

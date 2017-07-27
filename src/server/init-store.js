@@ -1,9 +1,8 @@
-// @flow
-
 import Immutable from 'immutable'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkMiddleWare from 'redux-thunk'
 
+import cartReducer from '../shared/reducer/cart'
 import menuReducer from '../shared/reducer/menu'
 
 const initStore = (plainPartialState: ?Object) => {
@@ -14,8 +13,11 @@ const initStore = (plainPartialState: ?Object) => {
 			.merge(Immutable.fromJS(plainPartialState.menu))
 	}
 
-	return createStore(combineReducers({ menu: menuReducer }),
-		preloadedState, applyMiddleware(thunkMiddleWare))
+	return createStore(combineReducers({
+		menu: menuReducer,
+		cart: cartReducer,
+	}),
+	preloadedState, applyMiddleware(thunkMiddleWare))
 }
 
 export default initStore

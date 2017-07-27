@@ -9,6 +9,7 @@ import thunkMiddleware from 'redux-thunk'
 import App from '../shared/app'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
+import cartReducer from '../shared/reducer/cart'
 import menuReducer from '../shared/reducer/menu'
 
 import '../styles/core.scss'
@@ -21,7 +22,10 @@ const preloadedState = window.__PRELOADED_STATE__
 
 
 const store = createStore(combineReducers(
-	{ menu: menuReducer }),
+	{
+		cart: cartReducer,
+		menu: menuReducer,
+	}),
 { menu: Immutable.fromJS(preloadedState.menu) },
 composeEnhancers(applyMiddleware(thunkMiddleware)))
 

@@ -1,0 +1,27 @@
+{
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"extends": [
+		"airbnb"
+	],
+	"parser": "babel-eslint",
+	"plugins": [
+		"compat"
+	],
+	"rules": {
+		"indent": ["error", "tab"],
+		"semi": [2, "never"],
+		"no-tabs": "off",
+		"no-unexpected-multiline": 2,
+		"compat/compat": 2,
+		"react/jsx-indent": [2, "tab"],
+		"react/jsx-indent-props": [2, "tab"]
+	},
+	"settings": {
+		"polyfills": [
+			"fetch"
+		]
+	}
+}

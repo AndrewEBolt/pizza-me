@@ -1,0 +1,26 @@
+:global {
+  @import 'base';
+
+  html {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: $font-family;
+    /*color: $black;*/
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  .page-container {
+    height: 100vh;
+  }
+}
